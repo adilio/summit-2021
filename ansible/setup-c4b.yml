@@ -7,10 +7,10 @@
     - chocolatey.chocolatey
     - ansible.windows
 
-  vars: 
-    choco_packages:
-      - name: 7zip
-      - name: notepadplusplus
+#  vars: 
+#    choco_packages:
+#      - name: 7zip
+#      - name: notepadplusplus
 #      - name: chocolateygui
 
     choco_features:
@@ -68,11 +68,11 @@
         state: latest
         source: ChocolateyInternal
 
-    - name: Install Chocolatey packages
-      chocolatey.chocolatey.win_chocolatey:
-        name: "{{ item.name }}"
-        state: latest
-      loop: "{{ choco_packages }}"
+#    - name: Install Chocolatey packages
+#      chocolatey.chocolatey.win_chocolatey:
+#        name: "{{ item.name }}"
+#        state: latest
+#      loop: "{{ choco_packages }}"
 
     - name: Enable features for self-service
       chocolatey.chocolatey.win_chocolatey_feature:
